@@ -1,50 +1,60 @@
-list_1 = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
-
-list_1.insert(2, [9,0,1,2])
-list_1.insert(3, [3,4,5,6])
-list_1.pop(4)
-list_1.pop(-1)
-print(list_1)
-
-for i in range(len(list_1)):
-    print(list_1[i])
 
 
-result_strings = []
+print("")
+print("result1")
+print("")
+   
+sample = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]] 
+result1 = []    
+for i in sample[:2]:
+    result1.append(i)
 
-for index, sublist in enumerate(list_1):
-    sublist_result = "odd" if index % 2 == 0 else "even"
-    result_strings.append(sublist_result)
+result1.insert(2,[9,0,1,2])
+result1.insert(3,[3,4,5,6])
 
-result_string = " ".join(result_strings)
-print(result_string)
+for j in result1:
+    print(j)
 
-even_numbers_list = []
-odd_numbers_list = []
+odd_and_even = []
+for k in sample:
+    for l in k:
+        if(l%2)==0:
+            odd_and_even.append("even")
+        else:
+            odd_and_even.append("odd")
 
-for list in list_1:
-    even_numbers = [num for num in list if num % 2 == 0]
-    odd_numbers = [num for num in list if num % 2 != 0]
-    
-    even_numbers_list.append(even_numbers)
-    odd_numbers_list.append(odd_numbers)
+print("")
+print("result 2")
+print("")
 
-print("even Numberslist:",even_numbers_list)
-print("Odd Numbers List:", odd_numbers_list)
+odd_and_even1 = []
+odd_and_even1.append(odd_and_even[:4])
+odd_and_even1.append(odd_and_even[4:8])
+odd_and_even1.append(odd_and_even[8:12])
+odd_and_even1.append(odd_and_even[12:17])
 
+for lists in odd_and_even1:
+    print(lists)
 
-sums_list = [sum(list) for list in list_1]
-print(sums_list)
+print("")
+print("result 3")
+print("")
 
-result_strings = []
+result3 = [sample[1][0]*2,sample[3][0]*2,sample[1][1]*2,sample[2][0]*2]
 
-for list in list_1:
-    sums_list = sum(list)
-    
-    if sums_list % 2 == 0:
-        result_strings.append("even")
+print(result3)
+
+print("")
+print("result 4")
+print("")
+
+even = []
+for even1 in result3:
+    if(even1 % 2)==0:
+        even.append("even")
     else:
-        result_strings.append("odd")
+        even.append("odd")
+print(even)
 
-result_string = " ".join(result_strings)
-print(result_string)
+
+
